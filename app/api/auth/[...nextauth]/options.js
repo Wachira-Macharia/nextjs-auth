@@ -24,6 +24,7 @@ export const options = {
       profile(profile) {
         console.log("Profile Google: ", profile);
 
+        let userRole = "Google User";
         return {
           ...profile,
           id: profile.sub,
@@ -35,14 +36,14 @@ export const options = {
     }),
   ],
 
-  callbacks:{
-    async jwt({token, user}){
-        if(user) token.role = user.role
-        return token;
+  callbacks: {
+    async jwt({ token, user }) {
+      if (user) token.role = user.role;
+      return token;
     },
-    async session({session, token}){
-        if(session?.user) session.user.role = token.role
-        return session;
-    }
-  }
+    async session({ session, token }) {
+      if (session?.user) session.user.role = token.role;
+      return session;
+    },
+  },
 };
