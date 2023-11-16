@@ -1,6 +1,6 @@
 "use client";
+
 import { useRouter } from "next/navigation";
-import PreviousMap from "postcss/lib/previous-map";
 import react, { useState } from "react";
 
 const UserForm = () => {
@@ -26,6 +26,7 @@ const UserForm = () => {
     });
 
     if (!res.ok) {
+      console.log("Response:", res);
       const response = await res.json();
       setErrorMessage(response.message);
     } else {

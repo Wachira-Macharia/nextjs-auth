@@ -1,7 +1,11 @@
+import UserForm from "../{components}/UserForm";
+
 const CreateUser = () => {
   return (
-    <div>Only Admins!</div>
-  )
-}
+    <div>
+      <UserForm />
+    </div>
+  );
+};
 
-export default CreateUser
+export default CreateUser;
